@@ -9,7 +9,6 @@ def calculator():
     num1 = st.number_input("Enter first number", value=0.0, step=1.0)
     num2 = st.number_input("Enter second number", value=0.0, step=1.0)
 
-    # Operation selection
     operation = st.selectbox("Choose operation", ["Add", "Subtract", "Multiply", "Divide"])
 
     if st.button("Calculate"):
