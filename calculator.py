@@ -11,7 +11,7 @@ def calculator():
 
     operation = st.selectbox("Choose operation", ["Add", "Subtract", "Multiply", "Divide"])
 
-    if st.button("Calculate"):
+    if st.button("Calculate"):add
         if operation == "Add":
             result = num1 + num2
             st.success(f"Result: {result}")
