@@ -6,7 +6,9 @@ from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
 from oauth2client.service_account import ServiceAccountCredentials
 
-
+# Configuration
+DRIVE_FOLDER_NAME = "Test Images"
+LOCAL_TEMP_DIR = "temp_images"
 
 def authenticate_google_drive():
     """Authenticates with Google Drive using a service account."""
@@ -34,7 +36,6 @@ def authenticate_google_drive():
     except Exception as e:
         st.error(f"Authentication failed: {e}")
         return None
-
 
 def get_drive_folder(drive_service, folder_name):
     """Finds or creates a Google Drive folder by name and returns its ID."""
