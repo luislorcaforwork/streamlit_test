@@ -6,21 +6,20 @@ from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
 from oauth2client.service_account import ServiceAccountCredentials
 
-# Configuration
-DRIVE_FOLDER_NAME = "Test Images"
-LOCAL_TEMP_DIR = "temp_images"
+
 
 def authenticate_google_drive():
     """Authenticates with Google Drive using a service account."""
     try:
         scopes = ['https://www.googleapis.com/auth/drive']
 
-        # --- OPTION A: if you have the file locally (dev mode) ---
+        # --- OPTION A: Local file (for development) ---
         if os.path.exists("service_account.json"):
             creds = ServiceAccountCredentials.from_json_keyfile_name(
                 "service_account.json", scopes
             )
-        # --- OPTION B: if JSON is stored in Streamlit secrets (deployment mode) ---
+
+        # --- OPTION B: Streamlit secrets (for deployment) ---
         elif "gdrive_sa" in st.secrets:
             creds = ServiceAccountCredentials.from_json_keyfile_dict(
                 dict(st.secrets["gdrive_sa"]), scopes
