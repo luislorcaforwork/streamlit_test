@@ -1,5 +1,5 @@
-from gemini_app import gemini_app
+from gem_app import gem_app
 
 
 if __name__ == '__main__':
-    gemini_app()
+    gem_app()

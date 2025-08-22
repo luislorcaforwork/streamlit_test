@@ -48,7 +48,7 @@ def upload_to_drive(drive_service, file_path, folder_id):
     return file['id']
 
 
-def gemini_app():
+def gem_app():
     st.title("📸 Android Camera Capture & Google Drive Uploader")
 
     st.sidebar.header("Settings")
