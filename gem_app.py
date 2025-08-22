@@ -3,7 +3,8 @@ import datetime
 import os
 from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
-from io import BytesIO
+
+
 
 # Configuration
 DRIVE_FOLDER_NAME = "Test Images"
