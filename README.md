@@ -1,0 +1,1 @@
+# Streamlit scaffold (Photos → NuMind → CSV)\n\nRun: `pip install -r requirements.txt` then `streamlit run ui/index.py`.\nNuMind & Drive are optional placeholders and can be wired later.\n

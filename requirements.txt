@@ -1,4 +1,5 @@
 streamlit
 pydrive2
-datetime
 oauth2client
+python-dotenv
+# numind  # add if available on PyPI
