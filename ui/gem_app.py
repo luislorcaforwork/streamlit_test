@@ -1,4 +1,6 @@
 from __future__ import annotations
+
+import json
 import os
 from pathlib import Path
 import datetime
@@ -16,16 +18,11 @@ except Exception:
 LOCAL_TEMP_DIR = Path("temp_images")
 
 def _get_shared_folder_id() -> str:
-    return (
-        st.secrets.get("drive", {}).get("1k9jhFdwQMDccHEdIf50rJ9ckm8jXSpz-")  # type: ignore[attr-defined]
-        or os.getenv("SHARED_FOLDER_ID", "")
-    )
+    return json.loads(st.secrets["DRIVE"])
+
 
 def _get_service_account_json_path() -> str:
-    return (
-        st.secrets.get("drive", {}).get("service_account_json_path", "")  # type: ignore[attr-defined]
-        or os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON", "env/credentials.json")
-    )
+    return json.loads(st.secrets["DRIVE"])
 
 def authenticate_google_drive():
     if GoogleAuth is None:

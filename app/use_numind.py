@@ -1,14 +1,15 @@
 from __future__ import annotations
 from pathlib import Path
+import streamlit as st
 from typing import Iterable, Callable, List, Dict, Optional
-import os
+
 try:
     from numind import NuMind  # type: ignore
 except Exception:
     NuMind = None  # type: ignore
 
 def _read_api_key() -> Optional[str]:
-    key = os.getenv("NUMIND_API_KEY")
+    key = st.secrets["NUMIND_KEY"]
     if key:
         return key.strip()
     legacy = Path("env/keynumind.txt")
